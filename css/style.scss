@@ -1,5 +1,5 @@
-$mainColor:#EA630B;
-$secondColor:#4B2771;
+$mainColor: #EA630B;
+$secondColor: #4B2771;
 $gold: #FFD700;
 
 @font-face {
@@ -46,19 +46,19 @@ button:focus {
 }
 
 .color1 {
-    color: $mainColor !important;
+    color: $mainColor  !important;
 }
 
 .color2 {
-    color: $secondColor !important;
+    color: $secondColor  !important;
 }
 
 .BG1 {
-    background-color: $mainColor !important;
+    background-color: $mainColor  !important;
 }
 
 .BG2 {
-    background-color: $secondColor !important;
+    background-color: $secondColor  !important;
 }
 
 .row {
@@ -138,7 +138,6 @@ body {
     @media(max-width:768px) {
         padding: 0px 5px;
     }
-
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -165,7 +164,7 @@ body {
             transition: .3s ease-in-out all;
 
             &:hover {
-                color: $mainColor !important;
+                color: $mainColor  !important;
             }
         }
     }
@@ -227,6 +226,120 @@ body {
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 /*----------*/
+.main-bg {
+    padding-top: 100px;
+
+    .appInfo {
+        .appName {
+            color: $mainColor;
+            font-size: 35px;
+        }
+
+        p {
+            line-height: 38px;
+            font-size: 19px;
+            color: #7F7777;
+        }
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-left: .15em solid;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 2px;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+
+    .appName {
+        font-weight: bold;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    100% {
+        border-color: #7F7777;
+    }
+}
+
+//animateButton
+.animateButton {
+    background: #fff;
+    font-weight: 100;
+    color: $mainColor;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 0 2em;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    @media(min-width: 600px) {
+        margin: 0 1em 2em;
+    }
+
+    svg {
+        height: 45px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    rect {
+        fill: none;
+        stroke: $mainColor;
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+    }
+
+    &:hover {
+        background: rgba(#fff, 0);
+        color: $secondColor;
+
+        rect {
+            stroke-width: 5;
+            stroke-dasharray: 15, 310;
+            stroke-dashoffset: 48;
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+}
+
 .main {
     height: 100vh;
     position: relative;
@@ -470,41 +583,49 @@ content {
 }
 
 .Features {
-    padding-top: 80px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
 
-    p {
-        font-size: 15px;
-        line-height: 28px;
-    }
 
-    i {
-        width: 60px;
-        height: 60px;
-        text-align: center;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
+
+    .Features-app {
+        border-radius: 30px;
         box-shadow: 0px 1px 8px 10px #cbcbcb1c;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-height: 270px;
+        transition: .3s ease;
+
+        i {
+            width: 100px;
+            height: 100px;
+            background: $mainColor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin: auto;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            width: 90%;
+            margin: auto;
+            color: #7F7777;
+
+        }
     }
 
-    .fa-rocket {
-        background-color: #50B9E8;
+    .Features-app:hover {
+        margin-top: -30px;
+        cursor: pointer;
     }
 
-    .fa-star {
-        background-color: #FFB30F;
-    }
 
-    .fa-users {
-        background-color: #19CA94;
-    }
-
-    .fa-cog {
-        background-color: #FF556E;
-    }
 }
+
 
 /////////////////////
 .download-app {
@@ -709,7 +830,7 @@ content {
     }
 }
 
-.iPhone_animated{
+.iPhone_animated {
     height: 600px;
     width: 100%;
     object-fit: contain;
@@ -718,10 +839,8 @@ content {
 
     @media(max-width: 992px) {
         height: 400px;
-
     }
 }
-
 
 .top-BG {
     background-image: url(../img/back.png);
@@ -762,7 +881,6 @@ content {
             margin-top: 30px;
             border-radius: 25px;
             white-space: nowrap;
-
 
             i {
                 font-size: 17px;
@@ -893,434 +1011,69 @@ content {
     }
 }
 
-// Medium devices (tablets, 768px and up)
-@media(min-width:767.98px) and (max-width:992px) {
-    .top-BG .mobile-img img {
-        width: 195px;
-        height: 380px;
-        margin-right: 0px;
-    }
 
-    .wave-primary {
-        display: none;
-    }
 
-    .top-BG div h1 {
-        margin: auto;
-        margin-top: 100px;
-        font-size: 26px;
-        color: $secondColor;
-    }
-
-    .top-BG {
-        height: 500px;
-    }
-
-    .Features {
-        margin-top: 70px;
-        padding-bottom: 0px;
-    }
-
-    .top-BG div p {
-        width: 100%;
-        line-height: 32px;
-        font-size: 17px;
-        color: #000;
-    }
-
-    .top-BG div a {
-        font-size: 12px;
-        margin: 30px 0px 0px;
-        width: 170px;
-    }
-
-    .Features-containers {
-        padding: 0px 5px;
-
-        .Features-app {
-            min-height: 215px;
-        }
-    }
-
-    .Features .Features-app i {
-        width: 50px;
-        font-size: 25px;
-        height: 50px;
-    }
-
-    .Features .Features-app p {
-        font-size: 14px;
-    }
-
-    .app-img {
-        margin-top: 0px !important;
-
-        p {
-            line-height: 34px;
-            margin-bottom: 50px;
-            font-size: 15px;
-        }
-
-        ul {
-            margin-top: 50px;
-        }
-    }
-
-    .app-img .img-col img.frame {
-        left: 16%;
-    }
-
-    .user-rate {
-        // background: none !important;
-        padding-bottom: 10px !important;
-    }
-
-    .user-rate .owl-item .carousel-image img {
-        width: 235px;
-        height: 235px;
-    }
-
-    button.owl-next {
-        left: -40px !important;
-    }
-
-    button.owl-prev {
-        right: -40px !important;
-
-        span {
-            color: #fff !important;
-        }
-    }
-
-    .owl-theme .owl-dots,
-    .owl-theme .owl-nav {
-        text-align: left;
-        margin: auto;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .download-app {
-
-        // background: none;
-        .download-app-txt {
-            margin-left: 0px;
-
-            a {
-                width: 150px;
-            }
-        }
-    }
-
-    .download-app .download-app-img {
-        margin-top: 75px;
-
-        img {
-            height: 390px;
-            width: 245px;
-        }
-    }
-
-    .download-app .down {
-        left: 40px;
-        top: 85px;
-    }
-
-    .contact-us img {
-        height: 512px;
-        width: 100%;
+.testimonial-carousel .carousel-control.left::before {
+    content: "\203a";
+}
+.testimonial-carousel .carousel-control.right::before {
+    content: "\2039";
+}
+.carousel-item{
+    p{
+        min-height: 70px;
+        margin-top: 50px;
     }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media(min-width:576px) and (max-width:767.98px) {
-    .top-BG .mobile-img img {
-        width: 195px;
-        height: 380px;
-        margin-right: 0px;
-    }
 
-    .user-rate {
-        background: none;
-    }
+.contact-us {
+    padding: 80px 0px 0px;
 
-    .wave-primary {
-        display: none;
-    }
-
-    .top-BG div h1 {
-        margin: auto;
-        margin-top: 100px;
-        font-size: 26px;
+    h1 {
         color: $secondColor;
-    }
-
-    .top-BG {
-        height: 500px;
-    }
-
-    .Features {
-        margin-top: 70px;
-        padding-bottom: 0px;
-    }
-
-    .top-BG div p {
-        width: 100%;
-        line-height: 32px;
-        font-size: 17px;
-        color: #000;
-    }
-
-    .top-BG div a {
-        font-size: 10px;
-        margin: 30px 0px 0px;
-        height: 50px;
-        width: 129px;
-    }
-
-    .Features-containers {
-        padding: 0px 5px;
-
-        .Features-app {
-            min-height: 215px;
-        }
-    }
-
-    .Features .Features-app i {
-        width: 50px;
-        font-size: 25px;
-        height: 50px;
-    }
-
-    .Features .Features-app p {
-        font-size: 14px;
-    }
-
-    .app-img {
-        margin-top: 0px !important;
-
-        p {
-            line-height: 34px;
-            margin-bottom: 50px;
-            font-size: 15px;
-        }
-
-        ul {
-            margin-top: 50px;
-        }
-    }
-
-    .app-img .img-col img.frame {
-        left: 5%;
-    }
-
-    .user-rate {
-        // background: none !important;
-        padding-bottom: 10px !important;
-    }
-
-    .user-rate .owl-item .carousel-image img {
-        width: 235px;
-        height: 235px;
-    }
-
-    button.owl-next {
-        left: -40px !important;
-    }
-
-    button.owl-prev {
-        right: -40px !important;
-
-        span {
-            color: $secondColor !important;
-        }
-    }
-
-    .owl-theme .owl-dots,
-    .owl-theme .owl-nav {
-        text-align: left;
-        margin: auto;
-        margin-top: 20px;
+        font-size: 28px;
         text-align: center;
+
     }
 
-    .download-app {
+    form {
+        border: 5px solid $mainColor;
+        padding: 10px;
+        border-radius: 30px;
 
-        // background: none;
-        .download-app-txt {
-            margin-left: 0px;
+        input {
+            height: 50px;
+            margin: 5px 0px 10px;
+            border: 1px solid $mainColor;
 
-            a {
-                width: 150px;
-            }
+        }
+
+        textarea {
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 30px;
+            border: 1px solid $mainColor;
+
+        }
+
+        button {
+            border: 1px solid $mainColor;
         }
     }
-
-    .download-app .download-app-img {
-        margin-top: 50px;
-
-        img {
-            height: 430px;
-            width: 300px;
-        }
+    img{
+        object-fit: contain;
     }
 
-    .download-app .down {
-        left: 100px;
-        top: 50px;
-    }
 }
-
-// Extra small devices (portrait phones, less than 576px)
-@media(max-width: 576px) {
-
-    // #navbarTogglerDemo01 {
-    //     background:$mainColor;
-    //     position: fixed;
-    //     width: 230px;
-    //     top: 75px;
-    //     right: 0px;
-    //     height: 100%;
-    // }
-    .wave-primary {
-        display: none;
-    }
-
-    .user-rate {
-        background: none;
-    }
-
-    .top-BG .mobile-img img {
-        width: 195px;
-        height: 380px;
-        margin-right: 0px;
-    }
-
-    .top-BG div h1 {
-        margin: auto;
-        margin-top: 50px;
-        font-size: 26px;
-        color: $secondColor;
-    }
-
-    .top-BG {
-        height: 500px;
-    }
-
-    .Features {
-        margin-top: 400px;
-        padding-bottom: 0px;
-    }
-
-    .top-BG div p {
-        width: 100%;
-        line-height: 35px;
-        font-size: 19px;
-        color: #000;
-    }
-
-    .top-BG div a {
-        width: 160px;
-        font-size: 10px;
-        margin: 30px 0px 0px;
-    }
-
-    .Features-containers {
-        padding: 0px 5px;
-
-        .Features-app {
-            min-height: 215px;
-        }
-    }
-
-    .Features .Features-app i {
-        width: 50px;
-        font-size: 25px;
-        height: 50px;
-    }
-
-    .Features .Features-app p {
-        font-size: 14px;
-    }
-
-    .app-img {
-        margin-top: 0px !important;
-
-        p {
-            line-height: 34px;
-            margin-bottom: 50px;
-            font-size: 15px;
-        }
-
-        ul {
-            margin-top: 30px;
-        }
-    }
-
-    .app-img .img-col img.frame {
-        left: 18%;
-    }
-
-    .user-rate {
-        // background: none !important;
-        padding-bottom: 10px !important;
-    }
-
-    .user-rate .owl-item .carousel-image img {
-        width: 235px;
-        height: 235px;
-    }
-
-    button.owl-next {
-        left: -40px !important;
-    }
-
-    button.owl-prev {
-        right: -40px !important;
-
-        span {
-            color: #ffffff !important;
-        }
-    }
-
-    .owl-theme .owl-dots,
-    .owl-theme .owl-nav {
-        text-align: left;
-        margin: auto;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .download-app {
-
-        // background: none;
-        .download-app-txt {
-            margin-left: 0px;
-
-            a {
-                width: 150px;
-            }
-        }
-    }
-
-    .download-app .download-app-img {
-        margin-top: 50px;
-
-        img {
-            height: 380px;
-            width: 235px;
-        }
-    }
-
-    .download-app .down {
-        left: 100px;
-        top: 50px;
-    }
-
-    .contact-us img {
-        height: 450px;
-        width: 100%;
-    }
+img{
+    max-width: 100%;
+}
+.start-border {
+    border-right: 3px solid $mainColor;
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
 /* Normal desktop :992px. (Laptop 14") */
@@ -1430,13 +1183,13 @@ content {
     }
 }
 
-
 .navbar {
     @media (max-width: 767px) {
-        .navbar-collapse{
-        padding-bottom: 10px;
+        .navbar-collapse {
+            padding-bottom: 10px;
         }
     }
+
     .nav-item .nav-link {
         display: flex;
         justify-content: center;

@@ -212,6 +212,143 @@ body {
 }
 
 /*----------*/
+.main-bg {
+  padding-top: 100px;
+}
+
+.main-bg .appInfo .appName {
+  color: #EA630B;
+  font-size: 35px;
+}
+
+.main-bg .appInfo p {
+  line-height: 38px;
+  font-size: 19px;
+  color: #7F7777;
+}
+
+.typewriter {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-left: .15em solid;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 2px;
+  /* Adjust as needed */
+  -webkit-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+          animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.typewriter .appName {
+  font-weight: bold;
+}
+
+/* The typing effect */
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #7F7777;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #7F7777;
+  }
+}
+
+.animateButton {
+  background: #fff;
+  font-weight: 100;
+  color: #EA630B;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .animateButton {
+    margin: 0 1em 2em;
+  }
+}
+
+.animateButton svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.animateButton rect {
+  fill: none;
+  stroke: #EA630B;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  -webkit-transition: all 0.35s linear;
+  transition: all 0.35s linear;
+}
+
+.animateButton:hover {
+  background: rgba(255, 255, 255, 0);
+  color: #4B2771;
+}
+
+.animateButton:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .main {
   height: 100vh;
   position: relative;
@@ -510,19 +647,26 @@ content {
 }
 
 .Features {
-  padding-top: 80px;
-}
-
-.Features p {
-  font-size: 15px;
-  line-height: 28px;
-}
-
-.Features i {
-  width: 60px;
-  height: 60px;
+  padding-bottom: 50px;
   text-align: center;
-  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.Features .Features-app {
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 1px 8px 10px #cbcbcb1c;
+          box-shadow: 0px 1px 8px 10px #cbcbcb1c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 270px;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.Features .Features-app i {
+  width: 100px;
+  height: 100px;
+  background: #EA630B;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -532,25 +676,21 @@ content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 50%;
+  margin: auto;
   color: #fff;
-  -webkit-box-shadow: 0px 1px 8px 10px #cbcbcb1c;
-          box-shadow: 0px 1px 8px 10px #cbcbcb1c;
+  margin-bottom: 20px;
 }
 
-.Features .fa-rocket {
-  background-color: #50B9E8;
+.Features .Features-app p {
+  width: 90%;
+  margin: auto;
+  color: #7F7777;
 }
 
-.Features .fa-star {
-  background-color: #FFB30F;
-}
-
-.Features .fa-users {
-  background-color: #19CA94;
-}
-
-.Features .fa-cog {
-  background-color: #FF556E;
+.Features .Features-app:hover {
+  margin-top: -30px;
+  cursor: pointer;
 }
 
 .download-app {
@@ -1001,328 +1141,66 @@ content {
   }
 }
 
-@media (min-width: 767.98px) and (max-width: 992px) {
-  .top-BG .mobile-img img {
-    width: 195px;
-    height: 380px;
-    margin-right: 0px;
-  }
-  .wave-primary {
-    display: none;
-  }
-  .top-BG div h1 {
-    margin: auto;
-    margin-top: 100px;
-    font-size: 26px;
-    color: #4B2771;
-  }
-  .top-BG {
-    height: 500px;
-  }
-  .Features {
-    margin-top: 70px;
-    padding-bottom: 0px;
-  }
-  .top-BG div p {
-    width: 100%;
-    line-height: 32px;
-    font-size: 17px;
-    color: #000;
-  }
-  .top-BG div a {
-    font-size: 12px;
-    margin: 30px 0px 0px;
-    width: 170px;
-  }
-  .Features-containers {
-    padding: 0px 5px;
-  }
-  .Features-containers .Features-app {
-    min-height: 215px;
-  }
-  .Features .Features-app i {
-    width: 50px;
-    font-size: 25px;
-    height: 50px;
-  }
-  .Features .Features-app p {
-    font-size: 14px;
-  }
-  .app-img {
-    margin-top: 0px !important;
-  }
-  .app-img p {
-    line-height: 34px;
-    margin-bottom: 50px;
-    font-size: 15px;
-  }
-  .app-img ul {
-    margin-top: 50px;
-  }
-  .app-img .img-col img.frame {
-    left: 16%;
-  }
-  .user-rate {
-    padding-bottom: 10px !important;
-  }
-  .user-rate .owl-item .carousel-image img {
-    width: 235px;
-    height: 235px;
-  }
-  button.owl-next {
-    left: -40px !important;
-  }
-  button.owl-prev {
-    right: -40px !important;
-  }
-  button.owl-prev span {
-    color: #fff !important;
-  }
-  .owl-theme .owl-dots,
-  .owl-theme .owl-nav {
-    text-align: left;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  .download-app .download-app-txt {
-    margin-left: 0px;
-  }
-  .download-app .download-app-txt a {
-    width: 150px;
-  }
-  .download-app .download-app-img {
-    margin-top: 75px;
-  }
-  .download-app .download-app-img img {
-    height: 390px;
-    width: 245px;
-  }
-  .download-app .down {
-    left: 40px;
-    top: 85px;
-  }
-  .contact-us img {
-    height: 512px;
-    width: 100%;
-  }
+.testimonial-carousel .carousel-control.left::before {
+  content: "\203a";
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .top-BG .mobile-img img {
-    width: 195px;
-    height: 380px;
-    margin-right: 0px;
-  }
-  .user-rate {
-    background: none;
-  }
-  .wave-primary {
-    display: none;
-  }
-  .top-BG div h1 {
-    margin: auto;
-    margin-top: 100px;
-    font-size: 26px;
-    color: #4B2771;
-  }
-  .top-BG {
-    height: 500px;
-  }
-  .Features {
-    margin-top: 70px;
-    padding-bottom: 0px;
-  }
-  .top-BG div p {
-    width: 100%;
-    line-height: 32px;
-    font-size: 17px;
-    color: #000;
-  }
-  .top-BG div a {
-    font-size: 10px;
-    margin: 30px 0px 0px;
-    height: 50px;
-    width: 129px;
-  }
-  .Features-containers {
-    padding: 0px 5px;
-  }
-  .Features-containers .Features-app {
-    min-height: 215px;
-  }
-  .Features .Features-app i {
-    width: 50px;
-    font-size: 25px;
-    height: 50px;
-  }
-  .Features .Features-app p {
-    font-size: 14px;
-  }
-  .app-img {
-    margin-top: 0px !important;
-  }
-  .app-img p {
-    line-height: 34px;
-    margin-bottom: 50px;
-    font-size: 15px;
-  }
-  .app-img ul {
-    margin-top: 50px;
-  }
-  .app-img .img-col img.frame {
-    left: 5%;
-  }
-  .user-rate {
-    padding-bottom: 10px !important;
-  }
-  .user-rate .owl-item .carousel-image img {
-    width: 235px;
-    height: 235px;
-  }
-  button.owl-next {
-    left: -40px !important;
-  }
-  button.owl-prev {
-    right: -40px !important;
-  }
-  button.owl-prev span {
-    color: #4B2771 !important;
-  }
-  .owl-theme .owl-dots,
-  .owl-theme .owl-nav {
-    text-align: left;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  .download-app .download-app-txt {
-    margin-left: 0px;
-  }
-  .download-app .download-app-txt a {
-    width: 150px;
-  }
-  .download-app .download-app-img {
-    margin-top: 50px;
-  }
-  .download-app .download-app-img img {
-    height: 430px;
-    width: 300px;
-  }
-  .download-app .down {
-    left: 100px;
-    top: 50px;
-  }
+.testimonial-carousel .carousel-control.right::before {
+  content: "\2039";
 }
 
-@media (max-width: 576px) {
-  .wave-primary {
-    display: none;
-  }
-  .user-rate {
-    background: none;
-  }
-  .top-BG .mobile-img img {
-    width: 195px;
-    height: 380px;
-    margin-right: 0px;
-  }
-  .top-BG div h1 {
-    margin: auto;
-    margin-top: 50px;
-    font-size: 26px;
-    color: #4B2771;
-  }
-  .top-BG {
-    height: 500px;
-  }
-  .Features {
-    margin-top: 400px;
-    padding-bottom: 0px;
-  }
-  .top-BG div p {
-    width: 100%;
-    line-height: 35px;
-    font-size: 19px;
-    color: #000;
-  }
-  .top-BG div a {
-    width: 160px;
-    font-size: 10px;
-    margin: 30px 0px 0px;
-  }
-  .Features-containers {
-    padding: 0px 5px;
-  }
-  .Features-containers .Features-app {
-    min-height: 215px;
-  }
-  .Features .Features-app i {
-    width: 50px;
-    font-size: 25px;
-    height: 50px;
-  }
-  .Features .Features-app p {
-    font-size: 14px;
-  }
-  .app-img {
-    margin-top: 0px !important;
-  }
-  .app-img p {
-    line-height: 34px;
-    margin-bottom: 50px;
-    font-size: 15px;
-  }
-  .app-img ul {
-    margin-top: 30px;
-  }
-  .app-img .img-col img.frame {
-    left: 18%;
-  }
-  .user-rate {
-    padding-bottom: 10px !important;
-  }
-  .user-rate .owl-item .carousel-image img {
-    width: 235px;
-    height: 235px;
-  }
-  button.owl-next {
-    left: -40px !important;
-  }
-  button.owl-prev {
-    right: -40px !important;
-  }
-  button.owl-prev span {
-    color: #ffffff !important;
-  }
-  .owl-theme .owl-dots,
-  .owl-theme .owl-nav {
-    text-align: left;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  .download-app .download-app-txt {
-    margin-left: 0px;
-  }
-  .download-app .download-app-txt a {
-    width: 150px;
-  }
-  .download-app .download-app-img {
-    margin-top: 50px;
-  }
-  .download-app .download-app-img img {
-    height: 380px;
-    width: 235px;
-  }
-  .download-app .down {
-    left: 100px;
-    top: 50px;
-  }
-  .contact-us img {
-    height: 450px;
-    width: 100%;
-  }
+.carousel-item p {
+  min-height: 70px;
+  margin-top: 50px;
+}
+
+.contact-us {
+  padding: 80px 0px 0px;
+}
+
+.contact-us h1 {
+  color: #4B2771;
+  font-size: 28px;
+  text-align: center;
+}
+
+.contact-us form {
+  border: 5px solid #EA630B;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.contact-us form input {
+  height: 50px;
+  margin: 5px 0px 10px;
+  border: 1px solid #EA630B;
+}
+
+.contact-us form textarea {
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border: 1px solid #EA630B;
+}
+
+.contact-us form button {
+  border: 1px solid #EA630B;
+}
+
+.contact-us img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+img {
+  max-width: 100%;
+}
+
+.start-border {
+  border-right: 3px solid #EA630B;
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 /* Normal desktop :992px. (Laptop 14") */
